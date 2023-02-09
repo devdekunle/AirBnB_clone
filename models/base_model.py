@@ -5,6 +5,7 @@ for other classes
 """
 from uuid import uuid4
 from datetime import datetime
+import models
 
 
 class BaseModel:
@@ -25,6 +26,8 @@ class BaseModel:
                     self.__dict__[key] = datetime.strptime(value, time_format)
                 else:
                     self.__dict__[key] = value
+        else:
+            models.storage.new(self)
 
 
     def __str__(self):
@@ -35,6 +38,7 @@ class BaseModel:
         """Method that updates the public instance attributes updated_at
         with the current datetime"""
         self.created_at = datetime.now()
+        models.storage.save()
 
     def to_dict(self):
         """returns a dictionary containing all key/values of the instance"""
