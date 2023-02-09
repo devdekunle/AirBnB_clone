@@ -39,4 +39,4 @@ class FileStorage:
                 for dict_val in json_dict.values():
                     class_name = dict_val["__class__"]
                     del dict_val["__class__"]
-                    self.new(BaseModel(**dict_val))
+                    self.new(eval(class_name)(**dict_val))
