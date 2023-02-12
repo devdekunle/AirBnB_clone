@@ -18,3 +18,4 @@ create: Creates a new instance of BaseModel, saves it (to the JSON file) and pri
 
 show: Prints the string representation of an instance based on the class name and id of the instance
 
+destroy: Deletes an instance based on the class name and id (saves the change into the JSON file)
