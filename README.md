@@ -15,3 +15,6 @@ c. The "EOF" or "quit" command is used to exit the interpreter. By typing the wo
 
 THE COMMANDS AVAILABLE IN THE INTERPRETER:
 create: Creates a new instance of BaseModel, saves it (to the JSON file) and prints the id of the instance.
+
+show: Prints the string representation of an instance based on the class name and id of the instance
+
