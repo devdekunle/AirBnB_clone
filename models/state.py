@@ -9,9 +9,7 @@ class State(BaseModel):
 
     name = ""
 
-
     def __init__(self, *args, **kwargs):
         """Instantiates an object"""
 
         super().__init__(*args, **kwargs)
-

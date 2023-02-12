@@ -29,7 +29,6 @@ class BaseModel:
         else:
             models.storage.new(self)
 
-
     def __str__(self):
         """Method to make the instance printable"""
         return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
@@ -42,10 +41,8 @@ class BaseModel:
 
     def to_dict(self):
         """returns a dictionary containing all key/values of the instance"""
-        obj_dict = self.__dict__.copy() #assign copy of object atrributes
+        obj_dict = self.__dict__.copy()  # assign copy of object atrributes
         obj_dict['created_at'] = self.created_at.isoformat()
         obj_dict['updated_at'] = self.updated_at.isoformat()
         obj_dict['__class__'] = self.__class__.__name__
         return obj_dict
-
-

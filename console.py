@@ -17,11 +17,11 @@ import shlex
 class HBNBCommand(cmd.Cmd):
     """This class defines the command interpreter"""
 
-    __classes = ['BaseModel', 'User', 'State', 'Amenity', 'Place', 'Review', 'City']
+    __classes = \
+        ['BaseModel', 'User', 'State', 'Amenity', 'Place', 'Review', 'City']
     prompt = "(hbnb) "
 
-
-    def do_create(self, class_name ):
+    def do_create(self, class_name):
         """Creates a new instance, saves it and prints the id"""
 
         if len(class_name) == 0:
@@ -52,7 +52,7 @@ class HBNBCommand(cmd.Cmd):
             obj_ids = all_obj.keys()
             obj_id = f"{args[0]}.{args[1]}"
             if obj_id in obj_ids:
-                    print(all_obj[obj_id])
+                print(all_obj[obj_id])
             else:
                 print("** no instance found **")
 
@@ -85,7 +85,7 @@ class HBNBCommand(cmd.Cmd):
 
         all_obj = models.storage.all()
         list_obj = []
-        if len (class_name) == 0:
+        if len(class_name) == 0:
             for keys in all_obj:
                 list_obj.append(str(all_obj[keys]))
             print(list_obj)
@@ -140,6 +140,7 @@ class HBNBCommand(cmd.Cmd):
     def emptyline(self):
         """prints an empty line if not command is passed + ENTER"""
         return
+
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()

@@ -11,7 +11,6 @@ class Review(BaseModel):
     place_id = ""
     user_id = ""
 
-
     def __init__(self, *args, **kwargs):
         """Instantiates an object"""
 

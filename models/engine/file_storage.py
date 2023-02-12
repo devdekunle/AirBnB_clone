@@ -12,6 +12,7 @@ from models.amenity import Amenity
 from models.review import Review
 from models.state import State
 
+
 class FileStorage:
     """ Module that serializes instances to json file and deserialzes json file
     to instances"""
