@@ -12,6 +12,7 @@ class TestBase_instantiation(unittest.TestCase):
     """class that consists of all the methods for the BaseModel tests"""
 
     def test_no_args(self):
+        """test argumwnts"""
         b1 = BaseModel()
         self.assertEqual(type(b1), BaseModel)
 
