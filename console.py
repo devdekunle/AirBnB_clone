@@ -100,6 +100,9 @@ class HBNBCommand(cmd.Cmd):
     def do_update(self, line):
         """ updates the attributes of an instance and saves it"""
         args = shlex.split(line)
+        all_objs = models.storage.all()
+        obj_keys = all_objs.keys()
+        ids = []
         if len(args) < 1:
             print("** class name missing **")
             return
@@ -108,6 +111,11 @@ class HBNBCommand(cmd.Cmd):
             return
         if len(args) < 2:
             print("** instance id missing ** ")
+            return
+        for model_id in obj_keys:
+            ids.append(model_id.split(".")[1])
+        if args[1] not in ids:
+            print("** instance not found **")
             return
         if len(args) < 3:
             print("** attribute name missing **")
@@ -120,14 +128,9 @@ class HBNBCommand(cmd.Cmd):
                 value = eval(args[3])
             except Exception as e:
                 value = str(args[3])
-            all_objs = models.storage.all()
-            obj_keys = all_objs.keys()
             obj_key = f"{args[0]}.{args[1]}"
-            if obj_key in obj_keys:
-                setattr(all_objs[obj_key], args[2], value)
-                models.storage.save()
-            else:
-                print("** instance not found **")
+            setattr(all_objs[obj_key], args[2], value)
+            models.storage.save()
 
     def do_quit(self, line):
         """Quit command to exit the program\n"""
