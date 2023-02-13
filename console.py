@@ -42,7 +42,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
             return
         if args[0] not in HBNBCommand.__classes:
-            print("** Class doesn't exist **")
+            print("** class doesn't exist **")
             return
         if len(args) < 2:
             print("** instance id missing ** ")
@@ -67,7 +67,7 @@ class HBNBCommand(cmd.Cmd):
             print("** Class doesn't exist **")
             return
         if len(args) < 2:
-            print("** instance id missing ** ")
+            print("** instance id missing **")
             return
         else:
             all_obj = models.storage.all()
@@ -110,7 +110,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
             return
         if len(args) < 2:
-            print("** instance id missing ** ")
+            print("** instance id missing **")
             return
         for model_id in obj_keys:
             ids.append(model_id.split(".")[1])
