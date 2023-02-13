@@ -115,7 +115,7 @@ class HBNBCommand(cmd.Cmd):
         for model_id in obj_keys:
             ids.append(model_id.split(".")[1])
         if args[1] not in ids:
-            print("** instance not found **")
+            print("** no instance found **")
             return
         if len(args) < 3:
             print("** attribute name missing **")
