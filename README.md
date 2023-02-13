@@ -14,3 +14,13 @@ you could pass a command as argument to help to get help about that specific com
 c. The "EOF" or "quit" command is used to exit the interpreter. By typing the word "quit" or pressing the keys "ctrl + D", the interpreter in exited.
 
 THE COMMANDS AVAILABLE IN THE INTERPRETER:
+create: Creates a new instance of BaseModel, saves it (to the JSON file) and prints the id of the instance.
+
+show: Prints the string representation of an instance based on the class name and id of the instance
+
+destroy: Deletes an instance based on the class name and id (saves the change into the JSON file)
+
+all: Prints all string representation of all instances based or not on the class name.
+
+update: Updates an instance based on the class name and id by adding or updating attribute (save the change into the JSON file)
+
