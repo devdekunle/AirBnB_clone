@@ -132,6 +132,8 @@ class HBNBCommand(cmd.Cmd):
             setattr(all_objs[obj_key], args[2], value)
             models.storage.save()
 
+    def default(self, line):
+        print("Hello Cloobtech")
     def do_quit(self, line):
         """Quit command to exit the program\n"""
         exit()
